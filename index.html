@@ -90,7 +90,94 @@ tbody tr:hover{background:#0f1a24}
 .res.bad{background:#2a1414;border:1px solid #7f2d2d;color:var(--red)}
 .res.warn{background:#241d0c;border:1px solid #7c5a1f;color:var(--gold)}
 .nb-tag{font-size:10px;color:var(--gold);border:1px solid #7c5a1f;background:#231a0c;border-radius:6px;padding:1px 6px;font-weight:800}
+.chk{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#a8b6c8;cursor:pointer;padding:8px 12px;border:1px solid var(--line2);border-radius:10px;background:#0d151d;user-select:none}
+.chk input{accent-color:#7c3aed;width:15px;height:15px;cursor:pointer}
+.how{padding:18px 20px 22px;max-width:960px;margin:0 auto}
+.howHero h2{margin:0 0 10px;font-size:22px;letter-spacing:-.01em}
+.howHero p{margin:0;color:#b6c2d4;font-size:14px;line-height:1.65}
+.howSteps{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+.howStep{display:flex;gap:14px;padding:14px 16px;border:1px solid var(--line2);border-radius:14px;background:#0f1822}
+.howStep>span{flex:none;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,#7c3aed,#a855f7);font-weight:800;font-size:13px}
+.howStep b{font-size:14px}
+.howStep p{margin:5px 0 0;color:#a9b6c8;font-size:12.8px;line-height:1.6}
+.howStep code,.howCard code,.howFoot code{background:#0b1220;border:1px solid #1e2a3a;border-radius:6px;padding:1px 6px;font-size:11.5px;color:#a5f3fc;word-break:break-word}
+.howCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+@media(max-width:820px){.howCards{grid-template-columns:1fr}}
+.howCard{padding:14px 16px;border:1px solid var(--line2);border-radius:14px;background:linear-gradient(160deg,#111b26,#0c131b)}
+.howCard h3{margin:0 0 8px;font-size:13.5px;color:#e6edf7}
+.howCard p{margin:0;color:#a9b6c8;font-size:12.8px;line-height:1.6}
+.howFaq{margin:18px 0}
+.howFaq h3{font-size:15px;margin:0 0 10px}
+.howFaq details{border:1px solid var(--line2);border-radius:12px;padding:11px 14px;margin-bottom:8px;background:#0f1822}
+.howFaq summary{cursor:pointer;font-weight:700;font-size:13px;color:#dbe4f0}
+.howFaq summary::marker{color:#7c3aed}
+.howFaq p{margin:9px 0 0;color:#a9b6c8;font-size:12.8px;line-height:1.65}
+.howFoot{margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid #1c4356;background:#10202b;color:#bae6fd;font-size:12.9px;line-height:1.65}
+.aliasNote{display:none;margin:0 14px 10px;padding:9px 12px;border-radius:10px;background:#10202b;border:1px solid #1c4356;color:#bae6fd;font-size:12.5px}
+.lbgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:14px}
+@media(max-width:900px){.lbgrid{grid-template-columns:1fr}}
+.plist{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;max-height:190px;overflow:auto}
+.pSearch{width:100%;margin:8px 0 2px;padding:8px 11px;border-radius:9px;border:1px solid var(--line2);background:#0d151d;color:var(--fg);font-size:12.5px}
+.pitem{font-size:11px;padding:2px 7px;border-radius:6px;background:#0f1822;border:1px solid #1f2a37;color:#cbd5e1}
+.pitem.f{border-color:#7c5a1f;background:#241d0c;color:#fbbf24}
+.pitem.w{border-color:#1f6b3c;background:#10281a;color:#86efac;font-weight:800}
+.mSub2{font-size:12px;color:#8b9bb0;margin-top:12px}
+.techBtn{margin:4px 0 10px;font-size:12px}
+.lb{background:#0f1822;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.lb h3{margin:0 0 10px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan)}
+.lbrow{display:grid;grid-template-columns:22px 26px 1fr auto;gap:9px;align-items:center;padding:5px 0;border-bottom:1px dashed #16202b;cursor:pointer}
+.lbrow:last-child{border-bottom:none}
+.lbrow:hover{background:#12202c;border-radius:8px}
+.rank{font-size:11px;font-weight:800;color:var(--muted);text-align:right}
+.lbava{width:26px;height:26px;border-radius:8px;object-fit:cover;background:linear-gradient(135deg,#312e81,#7c3aed);display:grid;place-items:center;font-size:10px;font-weight:800;color:#fff}
+.lbname{font-size:12.5px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lbbar{grid-column:2/-1;height:4px;border-radius:3px;background:#132030;overflow:hidden;margin:-3px 0 3px}
+.lbbar i{display:block;height:100%;background:linear-gradient(90deg,#7c3aed,#a855f7)}
+.lbval{font-size:12.5px;font-weight:800;color:var(--gold);white-space:nowrap}
+.lbval small{color:var(--muted);font-weight:600}
+.sumrow{display:flex;gap:12px;flex-wrap:wrap;padding:12px 14px 0}
+.sum{flex:1 1 180px;background:#0f1822;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.sum .k{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.sum .v{font-size:18px;font-weight:800}
 @media(max-width:720px){.hide-sm{display:none}.wrap{padding:16px 12px 40px}}
+
+/* ===== современный слой ===== */
+body{background:radial-gradient(1100px 520px at 50% -240px,#1a2233 0%,#0b0f16 62%) fixed}
+.card{transition:transform .16s ease,border-color .16s ease}
+.card:hover{transform:translateY(-2px);border-color:#26364a}
+.tab{transition:all .16s ease}
+.tab:hover{color:#e6edf7;border-color:#2a3d52}
+#tbody tr{transition:background .12s ease}
+#tbody tr:hover{background:#101c27}
+.btn,.tab,.verify,button{transition:all .15s ease}
+input,select{transition:border-color .15s ease,box-shadow .15s ease}
+input:focus,select:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px #3b82f622}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#22303f;border-radius:8px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* профиль — по центру */
+.drawer{position:fixed;inset:0;background:rgba(4,7,12,.72);backdrop-filter:blur(6px);display:none;z-index:60;align-items:center;justify-content:center;padding:20px}
+.drawer.on{display:flex;animation:fadeIn .16s ease}
+.dbox{position:relative;width:min(780px,96vw);max-height:88vh;overflow:auto;background:linear-gradient(170deg,#141d29,#0b1219);border:1px solid #26364a;border-radius:20px;padding:24px 26px 20px;box-shadow:0 30px 90px -30px #000d,0 0 0 1px #ffffff08 inset;animation:popIn .2s cubic-bezier(.2,.8,.3,1)}
+.dbox .close{position:sticky;top:0;float:right;margin:-6px -8px 0 0}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.dhead{gap:18px}
+.dava{width:88px;height:88px;border-radius:24px;box-shadow:0 10px 26px -14px #7c3aed}
+.dname{font-size:22px;letter-spacing:-.01em}
+.dstats{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media(max-width:640px){.dstats{grid-template-columns:1fr 1fr}.dava{width:64px;height:64px}.dbox{padding:18px 16px}}
+.dstat{border-radius:14px}
+.who{cursor:pointer}
+.who:hover{color:#7fe7f0}
+.who:hover .nm{text-decoration:underline;text-decoration-color:#7fe7f055;text-underline-offset:3px}
+.dbox::before{content:'';position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,#7c3aed66,#22d3ee66,transparent)}
+.dbox .sub a{color:var(--cyan)}
+.dbox .sub a:hover{color:#7fe7f0}
+/* модалка проверки — та же анимация */
+.modal.on{animation:fadeIn .16s ease}
+.mbox{animation:popIn .2s cubic-bezier(.2,.8,.3,1)}
 </style>
 </head>
 <body>
@@ -120,6 +207,8 @@ tbody tr:hover{background:#0f1a24}
   <div class="tabs">
     <button class="tab active" data-tab="draws">Розыгрыши бота</button>
     <button class="tab" data-tab="nightbot">Архив Nightbot</button>
+    <button class="tab" data-tab="stats">Статистика</button>
+    <button class="tab" data-tab="how">Как это работает</button>
   </div>
 
   <div class="panel" id="panelDraws">
@@ -128,6 +217,7 @@ tbody tr:hover{background:#0f1a24}
       <select id="fType"><option value="">Все типы</option><option value="w">Победы</option><option value="r">Рероллы</option></select>
       <select id="fSrc"><option value="">Все источники</option></select>
       <input type="date" id="fFrom"><input type="date" id="fTo">
+      <label class="chk"><input type="checkbox" id="fVer"> только проверяемые</label>
       <button class="btn" id="reset">Сбросить</button>
       <button class="btn primary" id="csv">CSV</button>
     </div>
@@ -146,6 +236,7 @@ tbody tr:hover{background:#0f1a24}
         <tbody id="tbody"></tbody>
       </table>
     </div>
+    <div class="aliasNote" id="aliasNote"></div>
     <div class="foot"><span id="cnt">—</span><span>Клик по нику — профиль · «Проверить» — пересчёт хешей</span></div>
   </div>
 
@@ -165,7 +256,55 @@ tbody tr:hover{background:#0f1a24}
   </div>
 </div>
 
-<div class="drawer" id="drawer"><div class="dbox">
+<div class="panel" id="panelStats" style="display:none">
+    <div class="sumrow" id="sumRow"></div>
+    <div class="lbgrid">
+      <div class="lb"><h3>🏆 Топ по победам</h3><div id="lbWins"></div></div>
+      <div class="lb"><h3>💰 Топ по выводам</h3><div id="lbPayout"></div></div>
+      <div class="lb"><h3>🔄 Топ по рероллам</h3><div id="lbRerolls"></div></div>
+      <div class="lb"><h3>🌙 Топ по Nightbot</h3><div id="lbNb"></div></div>
+    </div>
+    <div class="foot"><span>Клик по нику — профиль</span><span>считается по всей истории</span></div>
+  </div>
+
+  <div class="panel" id="panelHow" style="display:none">
+    <div class="how">
+      <div class="howHero">
+        <h2>Почему результат нельзя подкрутить</h2>
+        <p>Каждый розыгрыш фиксируется <b>до</b> того, как становится известна случайность. Это называется commit–reveal: сначала публикуется «пломба» (хеш секрета), потом приходит случайность из внешнего маяка, и только затем секрет раскрывается. Любой может пересчитать результат и убедиться, что он не менялся.</p>
+      </div>
+
+      <div class="howSteps">
+        <div class="howStep"><span>1</span><div><b>Сид</b><p>Бот создаёт секрет из 32 случайных байт и публикует его хеш: <code>commit = SHA256(seed)</code>. С этого момента сид изменить нельзя — хеш уже у всех на виду.</p></div></div>
+        <div class="howStep"><span>2</span><div><b>Случайность из будущего</b><p>Берётся <b>следующий</b> раунд drand — маяка случайности, который публикует подписанные значения каждые 3 секунды. На момент публикации commit этого раунда ещё не существовало.</p></div></div>
+        <div class="howStep"><span>3</span><div><b>Список участников</b><p>Состав фиксируется хешем: <code>SHA256(ники через перевод строки)</code>. Список сохраняется в «пул», и подменить его задним числом нельзя — хеш не сойдётся.</p></div></div>
+        <div class="howStep"><span>4</span><div><b>Кандидаты</b><p>Из всех участников детерминированно выбираются K финалистов: <code>H1 = HMAC(seed, "shortlist|" + randomness + "|" + hash списка + "|" + K)</code>.</p></div></div>
+        <div class="howStep"><span>5</span><div><b>Победитель</b><p>Среди финалистов: <code>H2 = HMAC(seed, "final|" + randomness + "|" + hash кандидатов)</code>, победитель — <code>H2 mod K</code>.</p></div></div>
+      </div>
+
+      <div class="howCards">
+        <div class="howCard"><h3>🔍 Где проверить</h3><p>Откройте любой розыгрыш кнопкой «Проверить»: сайт сам пересчитает все пять шагов и покажет, что сошлось. Технические данные (хеши, раунды, подписи) скрыты за кнопкой «Технические данные».</p></div>
+        <div class="howCard"><h3>🐍 Проверьте сами</h3><p>В карточке есть кнопка «Скопировать Python-код» — вставьте его на online-python.com и нажмите Run. Скрипт содержит сид, случайность, список участников и сам считает победителя.</p></div>
+        <div class="howCard"><h3>🔗 Источники</h3><p>Для drand — ссылка на раунд у api.drand.sh, для Random.org — официальная форма проверки подписи, для QRNG — страница сервиса. Всё открывается в один клик из карточки.</p></div>
+        <div class="howCard"><h3>🧩 Почему честны шансы</h3><p>Финалисты выбираются без повторов, победитель — равномерно среди них: итоговая вероятность для каждого участника ровно <code>1 / N</code>, независимо от порядка в списке.</p></div>
+      </div>
+
+      <div class="howFaq">
+        <h3>Частые вопросы</h3>
+        <details><summary>Почему старые розыгрыши не проверяются?</summary><p>До внедрения схемы бот не сохранял сид и список участников — пересчитывать нечего. Полная проверка доступна для розыгрышей, сделанных после перехода на commit–reveal (они помечены в карточке как <code>commit-reveal v1</code>).</p></details>
+        <details><summary>Что если источник случайности недоступен?</summary><p>Розыгрыш не проводится «на честном слове»: бот ждёт раунд drand до 15 секунд, и только потом считает результат. Если источник так и не ответил, это видно в окне победителя — там будет пометка «локальный выбор».</p></details>
+        <details><summary>Почему у QRNG нет подписи?</summary><p>Сервис QRNG не подписывает ответы криптографически, поэтому проверить можно только commit–reveal (что сид был зафиксирован заранее), но не подлинность самого значения.</p></details>
+        <details><summary>Что такое «пул участников»?</summary><p>Снимок списка на момент конкретного розыгрыша. Он хранится отдельно и привязан к хешу: один и тот же состав переиспользуется, а изменившийся получает новый пул.</p></details>
+        <details><summary>Можно ли проверить независимо от сайта?</summary><p>Да. Все данные лежат в публичном Gist: история по месяцам, пулы участников и журнал коммитов. Скачайте файл, возьмите Python-код из карточки — и пересчитайте у себя.</p></details>
+      </div>
+
+      <div class="howFoot">
+        <b>Коротко:</b> сид фиксируется до случайности, случайность приходит из внешнего маяка, список участников защищён хешем, а победитель выводится из всего этого формулой. Проверить может любой — в браузере или скриптом.
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer" id="drawer"><div class="dbox">
   <button class="close" id="dclose">✕</button>
   <div class="dhead">
     <img class="dava" id="dava" alt="">
@@ -186,11 +325,15 @@ tbody tr:hover{background:#0f1a24}
 <div class="modal" id="modal"><div class="mbox">
   <h3>Проверка розыгрыша</h3>
   <div class="sub" id="mSub"></div>
-  <div id="mRows"></div>
+  <button class="btn techBtn" id="techToggle">▸ Технические данные</button>
+    <div id="mRows" style="display:none"></div>
   <div class="res" id="mRes" style="display:none"></div>
   <div style="display:flex;gap:9px;margin-top:14px;flex-wrap:wrap">
     <button class="btn primary" id="recheck">Пересчитать</button>
     <a class="btn" id="drandLink" target="_blank" rel="noopener">Открыть раунд drand</a>
+    <button class="btn" id="mCopy">Скопировать JS-код</button>
+    <button class="btn" id="mCopyPy">Скопировать Python-код</button>
+    <a class="btn" id="mPyLink" target="_blank" rel="noopener" href="https://www.online-python.com/">Открыть online-python</a>
     <button class="btn" id="mclose">Закрыть</button>
   </div>
 </div></div>
@@ -198,14 +341,18 @@ tbody tr:hover{background:#0f1a24}
 <script>
 /* ================== НАСТРОЙКИ ================== */
 const GIST_OWNER = 'artes2233';
-const GIST_ID = '4ed64e61206c6ace4dbdfebff67a0ccc';
+const GIST_ID = new URLSearchParams(location.search).get('gist') || '4ed64e61206c6ace4dbdfebff67a0ccc';
 const CHANNEL = 'nasuvan_tv';
 const SHOW_ID = true;      // показывать Twitch ID
 const SHOW_PAYOUT = true;  // показывать сумму вывода
 const RAW = (file) => `https://gist.githubusercontent.com/${GIST_OWNER}/${GIST_ID}/raw/${file}`;
+// URL Cloudflare Worker для живой проверки ников в ShowMaster (пусто = только снимок из Gist)
+const NICK_PROXY = '';
 
 /* ================== СОСТОЯНИЕ ================== */
 let draws = [], nightbot = [];
+let aliasGroups = [], aliasMap = new Map();
+let poolsByHash = {};
 let sortKey = 'date', sortDir = -1;
 let currentNick = null;
 
@@ -216,15 +363,48 @@ const fmtDate = (d) => { const [dt, tm] = String(d || '').split(' '); const p = 
 const num = (n) => Number(n || 0).toLocaleString('ru-RU');
 
 /* ================== ЗАГРУЗКА ================== */
+async function gunzipB64(b64) {
+  const bin = atob(String(b64 || '').replace(/\s+/g, ''));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  try {
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+    return await new Response(stream).json();
+  } catch (e) {
+    return JSON.parse(new TextDecoder().decode(bytes));
+  }
+}
 async function loadAll(manual) {
   $('dot').className = 'dot warn';
+  const bust = '?t=' + Date.now();
   try {
-    const [d1, d2] = await Promise.all([
-      fetch(RAW('giveaway-history.json') + '?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()),
-      fetch(RAW('nightbot-history.json') + '?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ records: [] })),
-    ]);
-    draws = (d1.draws || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
-    nightbot = (d2.records || []).slice().sort((a, b) => String(b.d).localeCompare(String(a.d)));
+    let list = [];
+    const idxRes = await fetch(RAW('history-index.json') + bust, { cache: 'no-store' }).catch(() => null);
+    if (idxRes && idxRes.ok) {
+      const idx = await idxRes.json();
+      const months = idx.months || [];
+      const packs = await Promise.all(months.map((m) => fetch(RAW('history-' + m + '.json.gz.b64') + bust, { cache: 'no-store' }).then((r) => r.text()).catch(() => null)));
+      for (const txt of packs) {
+        if (!txt) continue;
+        try {
+          const obj = await gunzipB64(txt);
+          if (obj && Array.isArray(obj.draws)) {
+            list.push(...obj.draws);
+            for (const h of Object.keys(obj.pools || {})) if (!poolsByHash[h]) poolsByHash[h] = obj.pools[h];
+          }
+        } catch (e) {}
+      }
+    }
+    if (!list.length) {
+      const legacy = await fetch(RAW('giveaway-history.json') + bust, { cache: 'no-store' }).then((r) => r.json());
+      list = legacy.draws || [];
+    }
+    draws = list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    const nbRes = await fetch(RAW('nightbot-history.json') + bust, { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ records: [] }));
+    nightbot = (nbRes.records || []).slice().sort((a, b) => String(b.d).localeCompare(String(a.d)));
+    const alRes = await fetch(RAW('nick-aliases.json') + bust, { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ groups: [] }));
+    aliasGroups = (alRes && alRes.groups) || [];
+    buildAliasIndex();
     localStorage.setItem('giv.cache', JSON.stringify({ draws, nightbot, at: Date.now() }));
     renderAll();
     $('dot').className = 'dot';
@@ -239,7 +419,6 @@ async function loadAll(manual) {
       $('upd').textContent = 'нет сети · кеш от ' + new Date(j.at).toLocaleTimeString('ru-RU');
     } else {
       $('upd').textContent = 'ошибка загрузки';
-      $('tbody').innerHTML = '<tr><td colspan="8" class="empty">Не удалось загрузить данные</td></tr>';
     }
   }
 }
@@ -298,14 +477,64 @@ const avaObserver = new IntersectionObserver((entries) => {
   }
 }, { rootMargin: '150px' });
 
+/* ================== СМЕНА НИКОВ ================== */
+function buildAliasIndex() {
+  aliasMap = new Map();
+  for (const g of aliasGroups) {
+    const nicks = (g.nicks || []).slice().sort((a, b) => String(b.l || '').localeCompare(String(a.l || '')));
+    if (!nicks.length) continue;
+    const canon = nicks[0].n;
+    for (const x of nicks) aliasMap.set(low(x.n), { group: g, canonical: canon, nicks });
+  }
+}
+function groupOf(nick) {
+  const hit = aliasMap.get(low(nick));
+  return hit ? hit.nicks.map((x) => low(x.n)) : [low(nick)];
+}
+function canonical(nick) {
+  const hit = aliasMap.get(low(nick));
+  return hit ? hit.canonical : low(nick);
+}
+let nickLoading = false;
+async function ensureAliases(nick) {
+  const k = low(nick);
+  if (!k || aliasMap.has(k) || !NICK_PROXY || nickLoading) return;
+  nickLoading = true;
+  const note = $('aliasNote');
+  if (note) { note.style.display = ''; note.innerHTML = '🔎 Ищу историю ников для <b>' + esc(nick) + '</b> в ShowMaster…'; }
+  try {
+    const r = await fetch(NICK_PROXY + '?username=' + encodeURIComponent(k), { signal: AbortSignal.timeout(12000) });
+    const j = await r.json();
+    const d = (j && (j.data || j)) || {};
+    const items = d.nickname_history || [];
+    if (items.length) {
+      aliasGroups.push({ id: String(d.user_id || ''), nicks: items.map((x) => ({ n: String(x.login || '').toLowerCase(), f: x.first_seen || '', l: x.last_seen || '' })).filter((x) => x.n) });
+      buildAliasIndex();
+      renderLeaderboards();
+    }
+  } catch (e) {}
+  nickLoading = false;
+  renderTable();
+}
+function nickHistory(nick) {
+  const hit = aliasMap.get(low(nick));
+  return hit ? hit.nicks : [];
+}
 /* ================== РЕНДЕР ================== */
 function typeOf(d) { return Number(d.is_reroll) === 1 ? 'r' : 'w'; }
 function filtered() {
   const q = low($('q').value.trim());
+  const terms = q ? new Set(groupOf(q)) : null;
   const t = $('fType').value, src = $('fSrc').value;
+  const verOnly = $('fVer') && $('fVer').checked;
   const from = $('fFrom').value, to = $('fTo').value;
   return draws.filter((d) => {
-    if (q && !(low(d.winner).includes(q) || low(d.prize).includes(q) || low(d.site).includes(q))) return false;
+    if (q) {
+      const inGroup = terms && terms.has(low(d.winner));
+      const text = low(d.winner).includes(q) || low(d.prize).includes(q) || low(d.site).includes(q);
+      if (!inGroup && !text) return false;
+    }
+    if (verOnly && !(d.algo === 'v1' && d.seed && d.commit_hash && d.candidates_hash)) return false;
     if (t && typeOf(d) !== t) return false;
     if (src && String(d.random_source || '') !== src) return false;
     const day = String(d.date || '').slice(0, 10);
@@ -331,7 +560,7 @@ function renderStats() {
   sel.value = cur;
 }
 function srcLabel(s) {
-  const map = { drand: 'drand', 'random.org': 'random.org', qrng: 'QRNG', mix: 'Mix', race: 'Castle', local: 'локальный' };
+  const map = { drand: 'drand', 'random.org': 'random.org', randomorg: 'random.org', qrng: 'QRNG', mix: 'Mix', race: 'Castle', local: 'локальный' };
   return map[s] || s || '—';
 }
 function renderTable() {
@@ -340,6 +569,16 @@ function renderTable() {
     return String(A == null ? '' : A).localeCompare(String(B == null ? '' : B)) * (sortDir > 0 ? 1 : -1);
   });
   $('cnt').textContent = 'Показано ' + num(rows.length) + ' из ' + num(draws.length);
+  const note = $('aliasNote');
+  if (note) {
+    const qv = $('q').value.trim();
+    const hist = qv ? nickHistory(qv) : [];
+    if (hist.length > 1) {
+      const cur = canonical(qv);
+      note.innerHTML = '🔎 <b>' + esc(cur) + '</b> раньше был: ' + hist.filter((x) => low(x.n) !== low(cur)).map((x) => '<b>' + esc(x.n) + '</b>').join(' → ') + ' — показаны розыгрыши со всеми никами';
+      note.style.display = '';
+    } else note.style.display = 'none';
+  }
   if (!rows.length) { $('tbody').innerHTML = '<tr><td colspan="8" class="empty">Ничего не найдено</td></tr>'; return; }
   $('tbody').innerHTML = rows.map((d, i) => {
     const t = typeOf(d);
@@ -348,7 +587,7 @@ function renderTable() {
       <td>${fmtDate(d.date)}</td>
       <td><div class="who" data-nick="${esc(d.winner)}" data-uid="${esc(d.user_id || '')}">
         ${avatarImg(d.winner, 'ava')}
-        <div><div class="nm">${esc(d.winner)}</div>${SHOW_ID && d.user_id ? `<div class="id">ID ${esc(d.user_id)}</div>` : ''}</div>
+        <div><div class="nm">${esc(d.winner)}${canonical(d.winner) !== low(d.winner) ? ' <span class="nb-tag">старый ник</span>' : ''}</div>${SHOW_ID && d.user_id ? `<div class="id">ID ${esc(d.user_id)}</div>` : ''}</div>
       </div></td>
       <td class="hide-sm">${esc(d.prize || '')}</td>
       <td class="hide-sm">${SHOW_PAYOUT ? num(d.payout) : '—'}</td>
@@ -381,19 +620,76 @@ function observeAvatars() {
     avaObserver.observe(el);
   });
 }
-function renderAll() { renderStats(); renderTable(); renderNightbot(); }
+function renderAll() { renderStats(); renderTable(); renderNightbot(); renderLeaderboards(); }
+
+function plural(n, one, few, many) {
+  const a = Math.abs(n) % 100, b = a % 10;
+  if (a > 10 && a < 20) return many;
+  if (b > 1 && b < 5) return few;
+  if (b === 1) return one;
+  return many;
+}
+function leaderboard(map, fmtVal, limit) {
+  const arr = [...map.entries()].filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).slice(0, limit || 10);
+  if (!arr.length) return '<div class="sub">Нет данных</div>';
+  const max = arr[0][1];
+  return arr.map(([nick, val], i) => `<div class="lbrow" data-nick="${esc(nick)}">
+      <span class="rank">${i + 1}</span>
+      ${avatarImg(nick, 'lbava')}
+      <span class="lbname">${esc(displayName(nick))}</span>
+      <span class="lbval">${fmtVal(val)}</span>
+      <span class="lbbar"><i style="width:${Math.max(4, Math.round(val / max * 100))}%"></i></span>
+    </div>`).join('');
+}
+function displayName(nick) {
+  const d = draws.find((x) => low(x.winner) === low(nick));
+  return (d && d.winner) || (avaStore[low(nick)] || {}).login || nick;
+}
+function renderLeaderboards() {
+  const wins = new Map(), re = new Map(), pay = new Map(), nb = new Map(), nbRe = new Map();
+  let totalPayout = 0, maxPayout = 0, maxPayoutWho = '';
+  for (const d of draws) {
+    const nk = low(d.winner);
+    const isR = Number(d.is_reroll) === 1;
+    const ck = canonical(nk);
+    if (isR) { re.set(ck, (re.get(ck) || 0) + 1); continue; }
+    wins.set(ck, (wins.get(ck) || 0) + 1);
+    const p = Number(d.payout) || 0;
+    if (p) { pay.set(ck, (pay.get(ck) || 0) + p); totalPayout += p; if (p > maxPayout) { maxPayout = p; maxPayoutWho = d.winner; } }
+  }
+  for (const r of nightbot) {
+    const nk = canonical(low(r.w));
+    if (r.s === 'w') nb.set(nk, (nb.get(nk) || 0) + 1); else nbRe.set(nk, (nbRe.get(nk) || 0) + 1);
+  }
+  const totalWins = [...wins.values()].reduce((a, b) => a + b, 0);
+  const totalRe = [...re.values()].reduce((a, b) => a + b, 0);
+  const uniq = new Set([...wins.keys(), ...re.keys()]).size;
+  $('sumRow').innerHTML = `
+    <div class="sum"><div class="k">Всего розыгрышей</div><div class="v">${num(draws.length)}</div></div>
+    <div class="sum"><div class="k">Побед / рероллов</div><div class="v">${num(totalWins)} <small style="color:#8b9bb0">/ ${num(totalRe)}</small></div></div>
+    <div class="sum"><div class="k">Сумма выводов</div><div class="v">${num(totalPayout)}</div></div>
+    <div class="sum"><div class="k">Максимальный вывод</div><div class="v">${num(maxPayout)} <small style="color:#8b9bb0">${maxPayoutWho ? esc(maxPayoutWho) : ''}</small></div></div>
+    <div class="sum"><div class="k">Участников в истории</div><div class="v">${num(uniq)}</div></div>`;
+  $('lbWins').innerHTML = leaderboard(wins, (v) => v + ' <small>' + plural(v, 'победа', 'победы', 'побед') + '</small>');
+  $('lbPayout').innerHTML = leaderboard(pay, (v) => num(v) + ' <small>вывод</small>');
+  $('lbRerolls').innerHTML = leaderboard(re, (v) => v + ' <small>' + plural(v, 'реролл', 'реролла', 'рероллов') + '</small>');
+  $('lbNb').innerHTML = leaderboard(nb, (v) => v + ' <small>' + plural(v, 'победа', 'победы', 'побед') + '</small>');
+  observeAvatars();
+}
 
 /* ================== ПРОФИЛЬ ================== */
 async function openProfile(nick) {
   currentNick = low(nick);
-  const mine = draws.filter((d) => low(d.winner) === currentNick);
-  const nb = nightbot.filter((r) => low(r.w) === currentNick);
+  const aliases = new Set(groupOf(currentNick));
+  const mine = draws.filter((d) => aliases.has(low(d.winner)));
+  const nb = nightbot.filter((r) => aliases.has(low(r.w)));
+  const canon = canonical(currentNick);
   const wins = mine.filter((d) => typeOf(d) === 'w').length;
   const rer = mine.length - wins;
   const nbW = nb.filter((r) => r.s === 'w').length;
   const nbR = nb.length - nbW;
   const uid = (mine.find((d) => d.user_id) || {}).user_id || (avaStore[currentNick] || {}).id || '';
-  $('dname').textContent = nick;
+  $('dname').textContent = canon || nick;
   $('did').textContent = SHOW_ID && uid ? 'Twitch ID ' + uid : '';
   $('dtwitch').href = 'https://www.twitch.tv/' + encodeURIComponent(currentNick);
   $('dshow').href = 'https://followage.showmasterokda.com/?q=' + encodeURIComponent(currentNick);
@@ -409,6 +705,20 @@ async function openProfile(nick) {
     ...mine.map((d) => ({ t: d.date, kind: typeOf(d), txt: (d.prize || '') + (SHOW_PAYOUT && Number(d.payout) ? ' · вывод ' + num(d.payout) : ''), src: 'бот' })),
     ...nb.map((r) => ({ t: r.d, kind: r.s, txt: 'Nightbot', src: 'архив' })),
   ].sort((a, b) => String(b.t).localeCompare(String(a.t)));
+  const hist = nickHistory(currentNick);
+  const oldBlock = document.getElementById('dnickhist');
+  if (oldBlock) oldBlock.remove();
+  if (hist.length > 1) {
+    const wrap = document.createElement('div');
+    wrap.id = 'dnickhist';
+    wrap.className = 'dlist';
+    wrap.innerHTML = '<div class="sub" style="margin:4px 0 2px">Смена ников</div>' + hist.map((x) => {
+      const f = x.f ? String(x.f).slice(0, 10).split('-').reverse().join('.') : '';
+      const l = x.l ? String(x.l).slice(0, 10).split('-').reverse().join('.') : '';
+      return '<div class="ditem"><span><b>' + esc(x.n) + '</b>' + (low(x.n) === low(canon) ? ' · сейчас' : '') + '</span><small>' + (f && l ? f + ' — ' + l : (f || l)) + '</small></div>';
+    }).join('');
+    $('dlist').parentNode.insertBefore(wrap, $('dlist'));
+  }
   $('dlist').innerHTML = items.length
     ? items.map((x) => `<div class="ditem"><span>${esc(fmtDate(x.t))} ${x.src === 'архив' ? '<span class="nb-tag">NB</span>' : ''}</span><span class="tag ${x.kind === 'w' ? 'w' : 'r'}">${x.kind === 'w' ? 'победа' : 'реролл'}</span></div>`).join('')
     : '<div class="sub">Нет записей</div>';
@@ -416,6 +726,30 @@ async function openProfile(nick) {
 }
 
 /* ================== ПРОВЕРКА ХЕШЕЙ ================== */
+async function hmacHex(keyHex, msg) {
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(String(keyHex)), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(msg));
+  return [...new Uint8Array(sig)].map((x) => x.toString(16).padStart(2, '0')).join('');
+}
+async function makeStream(seedHex) {
+  const bufs = [seedHex];
+  for (let i = 1; i < 40; i++) bufs.push(await sha256hex(bufs[i - 1] + ':' + i));
+  let bi = 0, pos = 0;
+  return (m) => {
+    const limit = Math.floor(65536 / m) * m;
+    for (;;) {
+      if (pos + 4 > bufs[bi].length) { bi++; pos = 0; if (bi >= bufs.length) throw new Error('stream'); }
+      const v = parseInt(bufs[bi].slice(pos, pos + 4), 16); pos += 4;
+      if (v < limit) return v % m;
+    }
+  };
+}
+async function sampleIndexesAsync(total, pick, seedHex) {
+  const next = await makeStream(seedHex);
+  const arr = Array.from({ length: total }, (_, i) => i);
+  for (let i = 0; i < pick; i++) { const j = i + next(total - i); const t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
+  return arr.slice(0, pick);
+}
 async function sha256hex(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -428,62 +762,226 @@ function entropyOf(d) {
   if (!parts.length) return null;
   return parts.join('|');
 }
+function bindPSearch() {
+  const ps = $('pSearch');
+  if (!ps) return;
+  ps.oninput = () => {
+    const q = low(ps.value.trim());
+    const list = document.querySelector('#mParts .plist');
+    if (!list) return;
+    let shown = 0;
+    for (const el of list.children) {
+      const hit = !q || low(el.textContent).includes(q);
+      el.style.display = hit ? '' : 'none';
+      if (hit) shown++;
+    }
+    const sub = document.querySelector('#mParts .mSub2');
+    if (sub) sub.textContent = q ? 'Найдено ' + shown + ' из ' + list.children.length : 'Участники (' + list.children.length + ')';
+  };
+}
 async function openVerify(idx) {
   const d = draws[idx];
+  const K = Number(d.finalists_k || (Array.isArray(d.shortlist) ? d.shortlist.length : 0));
+  const pool = poolsByHash[d.candidates_hash] || null;
   const rows = [];
-  const add = (k, v) => rows.push(`<div class="row"><div class="k">${k}</div><div class="v">${v == null || v === '' ? '—' : esc(v)}</div></div>`);
+  const add = (k, v) => rows.push('<div class="row"><div class="k">' + k + '</div><div class="v">' + (v == null || v === '' ? '—' : esc(v)) + '</div></div>');
   add('Дата', fmtDate(d.date));
   add('Победитель', d.winner);
   add('Тип', typeOf(d) === 'w' ? 'победа' : 'реролл');
   add('Источник', srcLabel(d.random_source));
-  add('Раунд drand', d.drand_round);
+  add('Схема', d.algo === 'v1' ? 'commit-reveal v1' : 'старая (salt)');
+  add('commit', d.commit_hash);
+  add('seed (раскрыт после)', d.seed);
+  add('раунд коммита', d.commit_round);
+  add('раунд drand', d.drand_round);
   add('randomness', d.drand_randomness);
-  add('salt', d.drand_salt);
-  add('candidates_hash', d.candidates_hash);
+  add('подпись drand', d.drand_signature);
+  add('участников', d.participants_total || (pool ? pool.length : '—'));
+  add('hash участников', d.candidates_hash);
+  add('финалистов / K', K ? K : '—');
   add('shortlist_hash', d.shortlist_hash);
-  add('final_index / K', (d.final_index ?? '—') + ' / ' + (d.finalists_k ?? (Array.isArray(d.shortlist) ? d.shortlist.length : '—')));
-  add('shortlist', Array.isArray(d.shortlist) && d.shortlist.length ? d.shortlist.join(', ') : (d.shortlist || '—'));
+  add('final_index', d.final_index);
+  let parts = '<div class="mSub2">Участники' + (pool ? ' (' + pool.length + ')' : ' не сохранены для этой записи') + '</div>';
+  if (pool) parts += '<input class="pSearch" id="pSearch" placeholder="Поиск по нику среди участников…">';
+  if (pool) {
+    const short = Array.isArray(d.shortlist) && d.shortlist.length ? d.shortlist.map((x) => String(x.name || x).toLowerCase()) : null;
+    parts += '<div class="plist">' + pool.map((nm) => {
+      const isW = low(nm) === low(d.winner);
+      const isF = short ? short.indexOf(low(nm)) >= 0 : false;
+      return '<span class="pitem' + (isW ? ' w' : isF ? ' f' : '') + '">' + esc(nm) + '</span>';
+    }).join('') + '</div>';
+  }
   $('mRows').innerHTML = rows.join('');
-  $('mSub').textContent = 'Сверка пересчётом SHA-256 в браузере';
-  $('drandLink').href = d.drand_round ? 'https://api.drand.sh/public/' + d.drand_round : 'https://api.drand.sh/';
-  $('drandLink').style.display = d.drand_round ? '' : 'none';
-  const btn = $('recheck');
-  btn.onclick = () => verify(d);
+  $('mRows').style.display = 'none';
+  $('techToggle').textContent = '▸ Технические данные';
+  $('techToggle').onclick = () => {
+    const shown = $('mRows').style.display !== 'none';
+    $('mRows').style.display = shown ? 'none' : '';
+    $('techToggle').textContent = (shown ? '▸' : '▾') + ' Технические данные';
+  };
+  $('mSub').textContent = 'Проверка по схеме commit-reveal';
+  const extraBox = document.getElementById('mParts');
+  if (extraBox) extraBox.outerHTML = '<div id="mParts">' + parts + '</div>';
+  else $('mRows').insertAdjacentHTML('afterend', '<div id="mParts">' + parts + '</div>');
+  const CHAIN = '52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971';
+  const src = low(d.random_source || '');
+  const srcLink = $('drandLink');
+  if (d.drand_round) {
+    srcLink.href = 'https://api.drand.sh/' + CHAIN + '/public/' + d.drand_round;
+    srcLink.textContent = 'Открыть раунд drand ' + d.drand_round;
+    srcLink.style.display = '';
+  } else if (src.includes('qrng')) {
+    srcLink.href = 'https://lizaonair.com/qrng/';
+    srcLink.textContent = 'Источник: QRNG lizaonair';
+    srcLink.style.display = '';
+  } else if (src.includes('random')) {
+    let formUrl = '';
+    try {
+      if (d.raw_json && d.source_signature) {
+        const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(d.raw_json)));
+        formUrl = 'https://api.random.org/signatures/form?format=json&random=' + encodeURIComponent(b64) + '&signature=' + encodeURIComponent(d.source_signature);
+      }
+    } catch (e) {}
+    srcLink.href = formUrl || 'https://www.random.org/';
+    srcLink.textContent = formUrl
+      ? 'Проверить подпись Random.org' + (d.randomorg_serial ? ' · serial ' + d.randomorg_serial : '')
+      : 'Источник: Random.org' + (d.randomorg_serial ? ' · serial ' + d.randomorg_serial : '');
+    srcLink.style.display = '';
+  } else {
+    srcLink.style.display = 'none';
+  }
+  $('recheck').onclick = () => verifyDraw(d);
+  $('mCopyPy').onclick = async () => {
+    const pool = poolsByHash[d.candidates_hash] || [];
+    const py = [
+      '# Проверка розыгрыша — вставьте в online-python.com и нажмите Run',
+      'import hashlib, hmac, json',
+      '',
+      'seed = ' + JSON.stringify(d.seed),
+      'entropy = ' + JSON.stringify(entropyOf(d)),
+      'list_hash = ' + JSON.stringify(d.candidates_hash),
+      'K = ' + Number(d.finalists_k || 0),
+      'final_index = ' + Number(d.final_index),
+      'winner = ' + JSON.stringify(d.winner),
+      'commit = ' + JSON.stringify(d.commit_hash || ''),
+      'pool = ' + JSON.stringify(pool),
+      '',
+      'assert hashlib.sha256(seed.encode()).hexdigest() == commit, "commit не совпал"',
+      'assert hashlib.sha256("\\n".join(pool).encode()).hexdigest() == list_hash, "список изменён"',
+      '',
+      'def hmac_hex(k, m): return hmac.new(k.encode(), m.encode(), hashlib.sha256).hexdigest()',
+      '',
+      'h1 = hmac_hex(seed, f"shortlist|{entropy}|{list_hash}|{K}")',
+      'buf, pos, n = h1, 0, 0',
+      'def nxt(m):',
+      '    global buf, pos, n',
+      '    lim = (65536 // m) * m',
+      '    while True:',
+      '        if pos + 4 > len(buf):',
+      '            n += 1',
+      '            buf = hashlib.sha256((buf + f":{n}").encode()).hexdigest(); pos = 0',
+      '        v = int(buf[pos:pos+4], 16); pos += 4',
+      '        if v < lim: return v % m',
+      '',
+      'idx = list(range(len(pool)))',
+      'for i in range(K):',
+      '    j = i + nxt(len(pool) - i)',
+      '    idx[i], idx[j] = idx[j], idx[i]',
+      'shortlist = [pool[i] for i in idx[:K]]',
+      'sl_hash = hashlib.sha256("\\n".join(shortlist).encode()).hexdigest()',
+      'h2 = hmac_hex(seed, f"final|{entropy}|{sl_hash}")',
+      'fi = int(h2, 16) % K',
+      '',
+      'print("кандидаты:", ", ".join(shortlist))',
+      'print("победитель:", shortlist[fi]); print("ожидался:", winner); print("индекс:", fi, "/", final_index)',
+      'print("ИТОГ:", "OK" if shortlist[fi] == winner and fi == final_index else "НЕ СОВПАЛО")',
+    ].join('\n');
+    try { await navigator.clipboard.writeText(py); $('mCopyPy').textContent = 'Python скопирован ✓'; setTimeout(() => ($('mCopyPy').textContent = 'Скопировать Python-код'), 1600); }
+    catch (e) { window.prompt('Скопируйте код:', py); }
+  };
+  $('mCopy').onclick = async () => {
+    const pool = poolsByHash[d.candidates_hash] || [];
+    const code = [
+      '// Проверка розыгрыша — вставьте в любой JS/Node и запустите',
+      'const seed = ' + JSON.stringify(d.seed) + ';',
+      'const entropy = ' + JSON.stringify(entropyOf(d)) + ';',
+      'const listHash = ' + JSON.stringify(d.candidates_hash) + ';',
+      'const K = ' + Number(d.finalists_k || 0) + ';',
+      'const finalIndex = ' + Number(d.final_index) + ';',
+      'const winner = ' + JSON.stringify(d.winner) + ';',
+      'const pool = ' + JSON.stringify(pool) + ';',
+      '',
+      'const c = require("crypto");',
+      'const sha = s => c.createHash("sha256").update(s).digest("hex");',
+      'const hmac = (k, m) => c.createHmac("sha256", k).update(m).digest("hex");',
+      'const h1 = hmac(seed, "shortlist|" + entropy + "|" + listHash + "|" + K);',
+      'let buf = h1, pos = 0, n = 0;',
+      'const next = m => { const lim = Math.floor(65536/m)*m; for(;;){ if (pos+4 > buf.length){ buf = sha(buf+":"+ ++n); pos = 0; } const v = parseInt(buf.slice(pos,pos+4),16); pos += 4; if (v < lim) return v % m; } };',
+      'const idx = pool.map((_, i) => i);',
+      'for (let i = 0; i < K; i++) { const j = i + next(pool.length - i); [idx[i], idx[j]] = [idx[j], idx[i]]; }',
+      'const shortlist = idx.slice(0, K).map(i => pool[i]);',
+      'const h2 = hmac(seed, "final|" + entropy + "|" + sha(shortlist.join("\\n")));',
+      'const fi = Number(BigInt("0x" + h2) % BigInt(K));',
+      'console.log("commit ok:", sha(seed) === ' + JSON.stringify(d.commit_hash || '') + ');',
+      'console.log("кандидаты:", shortlist.join(", "));',
+      'console.log("победитель:", shortlist[fi], "| ожидался:", winner, "|", shortlist[fi] === winner, "| индекс:", fi, "=", finalIndex);',
+    ].join('\n');
+    try { await navigator.clipboard.writeText(code); $('mCopy').textContent = 'Код скопирован ✓'; setTimeout(() => ($('mCopy').textContent = 'Скопировать код проверки'), 1600); }
+    catch (e) { window.prompt('Скопируйте код:', code); }
+  };
+  bindPSearch();
   $('mRes').style.display = 'none';
   $('modal').classList.add('on');
-  verify(d);
+  verifyDraw(d);
 }
-async function verify(d) {
+async function verifyDraw(d) {
   const box = $('mRes');
   box.style.display = 'block';
-  const entropy = entropyOf(d);
-  const salt = d.drand_salt;
-  const listHash = d.candidates_hash;
-  const slHash = d.shortlist_hash;
+  if (d.random_source === 'race') { box.className = 'res warn'; box.textContent = 'Castle: победитель определяется гонкой — хеш не применялся'; return; }
   const K = Number(d.finalists_k || (Array.isArray(d.shortlist) ? d.shortlist.length : 0));
-  if (d.random_source === 'race') { box.className = 'res warn'; box.textContent = 'Castle: победитель определяется гонкой, хеш не применялся'; return; }
-  if (!entropy) { box.className = 'res warn'; box.textContent = 'Нет сохранённой случайности — проверить нельзя'; return; }
-  if (!salt || !listHash) { box.className = 'res warn'; box.textContent = 'Нет salt или candidates_hash (старая запись) — проверить нельзя'; return; }
-  if (!slHash || !K) {
+  const pool = poolsByHash[d.candidates_hash] || null;
+  if (d.algo !== 'v1' || !d.seed || !d.commit_hash) {
     box.className = 'res warn';
-    box.textContent = 'Одноступенчатый розыгрыш: нужен список участников, чтобы пересчитать победителя';
+    box.textContent = 'Старая запись: схема commit-reveal не применялась, полная проверка недоступна';
     return;
   }
-  const H2 = await sha256hex(entropy + '|' + salt + '|' + listHash + '|final|' + slHash);
-  const idx = Number(BigInt('0x' + H2) % BigInt(K));
-  const okIdx = idx === Number(d.final_index);
-  let okWinner = null;
-  if (Array.isArray(d.shortlist) && d.shortlist.length) {
-    okWinner = low(d.shortlist[idx]) === low(d.winner);
-  }
-  if (okIdx && okWinner !== false) {
-    box.className = 'res ok';
-    box.textContent = `✅ Совпало: H2 mod ${K} = ${idx} — как записано в базе` + (okWinner ? ', победитель есть в шорт-листе' : '');
-  } else {
-    box.className = 'res bad';
-    box.textContent = `❌ Не совпало: пересчёт даёт ${idx}, в базе ${d.final_index}` + (okWinner === false ? ' (и ник не совпал с шорт-листом)' : '');
+  const checks = [];
+  const commitOk = (await sha256hex(d.seed)) === d.commit_hash;
+  checks.push(commitOk ? '✅ commit = SHA256(seed)' : '❌ commit не совпал');
+  checks.push(d.commit_round && d.drand_round && Number(d.drand_round) > Number(d.commit_round) ? '✅ случайность из будущего раунда' : '⚠ раунд не позже коммита');
+  if (!pool) { box.className = 'res warn'; box.innerHTML = checks.join(' · ') + ' · ⚠ список участников не сохранён'; return; }
+  const listHash = await sha256hex(pool.join('\n'));
+  checks.push(listHash === d.candidates_hash ? '✅ список участников не изменён' : '❌ хеш списка не совпал');
+  if (!K) { box.className = 'res warn'; box.innerHTML = checks.join(' · ') + ' · ⚠ K не сохранён'; return; }
+  const entropy = entropyOf(d) || ('drand:' + (d.drand_randomness || ''));
+  const H1 = await hmacHex(d.seed, 'shortlist|' + entropy + '|' + d.candidates_hash + '|' + K);
+  const picks = await sampleIndexesAsync(pool.length, K, H1);
+  const shortlist = picks.map((i) => pool[i]);
+  const slHash = await sha256hex(shortlist.join('\n'));
+  checks.push(slHash === d.shortlist_hash ? '✅ кандидаты пересчитаны' : '❌ shortlist_hash не совпал');
+  const H2 = await hmacHex(d.seed, 'final|' + entropy + '|' + d.shortlist_hash);
+  const fi = Number(BigInt('0x' + H2) % BigInt(K));
+  checks.push(fi === Number(d.final_index) ? '✅ победитель пересчитан' : '❌ final_index не совпал');
+  const winnerOk = low(shortlist[fi]) === low(d.winner);
+  checks.push(winnerOk ? '✅ ник совпал' : '❌ ник не совпал');
+  const allOk = commitOk && listHash === d.candidates_hash && slHash === d.shortlist_hash && fi === Number(d.final_index) && winnerOk;
+  box.className = 'res ' + (allOk ? 'ok' : 'bad');
+  box.innerHTML = checks.join('<br>');
+  const parts = document.getElementById('mParts');
+  if (parts) {
+    parts.innerHTML = parts.innerHTML.replace(/<div class="mSub2">[\s\S]*?<\/div>/, '<div class="mSub2">Участники (' + pool.length + ') · финалисты по пересчёту подсвечены</div>');
+    const list = parts.querySelector('.plist');
+    if (typeof bindPSearch === 'function') bindPSearch();
+    if (list) {
+      const fset = new Set(shortlist.map((x) => low(x)));
+      [...list.children].forEach((el) => {
+        const t = low(el.textContent);
+        el.className = 'pitem' + (t === low(d.winner) ? ' w' : fset.has(t) ? ' f' : '');
+      });
+    }
   }
 }
+async function verify(d) { return verifyDraw(d); }
 
 /* ================== CSV ================== */
 function exportCsv() {
@@ -500,22 +998,35 @@ function exportCsv() {
 
 /* ================== СОБЫТИЯ ================== */
 $('refresh').onclick = () => loadAll(true);
-$('q').oninput = renderTable;
+let searchTimer = 0;
+$('q').oninput = () => {
+  clearTimeout(searchTimer);
+  const v = $('q').value.trim();
+  searchTimer = setTimeout(() => {
+    if (v.length >= 3) ensureAliases(v);
+    renderTable();
+  }, 450);
+};
 $('fType').onchange = renderTable;
+$('fVer').onchange = renderTable;
 $('fSrc').onchange = renderTable;
 $('fFrom').onchange = renderTable;
 $('fTo').onchange = renderTable;
-$('reset').onclick = () => { $('q').value = ''; $('fType').value = ''; $('fSrc').value = ''; $('fFrom').value = ''; $('fTo').value = ''; renderTable(); };
+$('reset').onclick = () => {
+  if ($('fVer')) $('fVer').checked = false; $('q').value = ''; $('fType').value = ''; $('fSrc').value = ''; $('fFrom').value = ''; $('fTo').value = ''; renderTable(); };
 $('csv').onclick = exportCsv;
 $('q2').oninput = renderNightbot;
 $('fNb').onchange = renderNightbot;
 $('reset2').onclick = () => { $('q2').value = ''; $('fNb').value = ''; renderNightbot(); };
 document.querySelectorAll('.tab').forEach((t) => t.onclick = () => {
   document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x === t));
-  const isDraws = t.dataset.tab === 'draws';
-  $('panelDraws').style.display = isDraws ? '' : 'none';
-  $('panelNb').style.display = isDraws ? 'none' : '';
-  if (!isDraws) renderNightbot();
+  const tab = t.dataset.tab;
+  $('panelDraws').style.display = tab === 'draws' ? '' : 'none';
+  $('panelNb').style.display = tab === 'nightbot' ? '' : 'none';
+  $('panelStats').style.display = tab === 'stats' ? '' : 'none';
+  $('panelHow').style.display = tab === 'how' ? '' : 'none';
+  if (tab === 'nightbot') renderNightbot();
+  if (tab === 'stats') renderLeaderboards();
 });
 document.querySelectorAll('th[data-sort]').forEach((th) => th.onclick = () => {
   const k = th.dataset.sort;
@@ -529,6 +1040,14 @@ document.addEventListener('click', (e) => {
   if (v) { openVerify(Number(v.dataset.i)); return; }
 });
 $('dclose').onclick = () => $('drawer').classList.remove('on');
+$('drawer').addEventListener('click', (e) => { if (e.target === $('drawer')) $('drawer').classList.remove('on'); });
+const modalEl = $('modal');
+if (modalEl) modalEl.addEventListener('click', (e) => { if (e.target === modalEl) modalEl.classList.remove('on'); });
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if ($('drawer').classList.contains('on')) $('drawer').classList.remove('on');
+  if (modalEl && modalEl.classList.contains('on')) modalEl.classList.remove('on');
+});
 $('drawer').onclick = (e) => { if (e.target === $('drawer')) $('drawer').classList.remove('on'); };
 $('mclose').onclick = () => $('modal').classList.remove('on');
 $('modal').onclick = (e) => { if (e.target === $('modal')) $('modal').classList.remove('on'); };
