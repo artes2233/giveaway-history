@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>История розыгрышей · nasuvan_tv</title>
+<style>
+:root{
+  --bg:#0a0e14; --panel:#111a24; --panel2:#0e151d; --line:#1e2a37; --line2:#27384a;
+  --text:#e6edf3; --muted:#8b9bb0; --accent:#a855f7; --cyan:#7dd3fc; --gold:#fbbf24;
+  --green:#86efac; --red:#fca5a5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 15% -10%,#1a1230 0%,transparent 60%),radial-gradient(1000px 500px at 90% 0%,#08202b 0%,transparent 55%),var(--bg);color:var(--text);font:14px/1.5 "Segoe UI",Roboto,Arial,sans-serif;min-height:100vh}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:22px 20px 60px}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,#a855f7,#22d3ee);display:grid;place-items:center;font-size:22px;box-shadow:0 8px 26px #a855f755}
+h1{font-size:20px;margin:0;letter-spacing:.2px}
+.sub{color:var(--muted);font-size:12px}
+.status{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{border:1px solid var(--line);background:#0f1720;border-radius:999px;padding:5px 12px;font-size:12px;color:var(--muted);display:flex;gap:7px;align-items:center}
+.pill b{color:var(--text)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.dot.warn{background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+.card{background:linear-gradient(160deg,#131d28,#0d141c);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+.card .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}
+.card .v{font-size:22px;font-weight:800;margin-top:3px}
+.card .v small{font-size:12px;color:var(--muted);font-weight:600}
+.tabs{display:flex;gap:8px;margin:18px 0 12px;flex-wrap:wrap}
+.tab{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#0f1720;color:var(--muted);cursor:pointer;font-weight:700;font-size:13px}
+.tab.active{background:linear-gradient(135deg,#7c3aed,#a855f7);border-color:transparent;color:#fff}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.filters{display:flex;gap:10px;flex-wrap:wrap;padding:14px;border-bottom:1px solid var(--line);background:#0f1720}
+input,select{background:#0b1219;border:1px solid var(--line2);color:var(--text);border-radius:9px;padding:8px 11px;font:inherit;outline:none;min-width:0}
+input:focus,select:focus{border-color:var(--accent)}
+input[type=date]{color-scheme:dark}
+.btn{background:#131f2b;border:1px solid var(--line2);color:var(--text);border-radius:9px;padding:8px 14px;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;color:#fff}
+.btn.ghost{background:transparent}
+.grow{flex:1}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #16202b;vertical-align:middle}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#0d151d;position:sticky;top:0;z-index:2;cursor:pointer;user-select:none}
+th:hover{color:var(--cyan)}
+tbody tr:hover{background:#0f1a24}
+.who{display:flex;align-items:center;gap:9px;cursor:pointer;min-width:170px}
+.ava{width:30px;height:30px;border-radius:9px;object-fit:cover;background:linear-gradient(135deg,#312e81,#7c3aed);flex:none;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.nm{font-weight:700}
+.id{font-size:10.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:999px;letter-spacing:.03em}
+.tag.w{background:#12351f;color:var(--green);border:1px solid #1f6b3c}
+.tag.r{background:#3a1d1d;color:var(--red);border:1px solid #7f2d2d}
+.src{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--line2);color:var(--cyan);background:#0d1c24;white-space:nowrap}
+.src.race{border-color:#7c5a1f;color:var(--gold);background:#231a0c}
+.src.local{border-color:#7f2d2d;color:var(--red);background:#2a1414}
+.verify{border:1px solid var(--line2);background:#0d151d;color:var(--muted);border-radius:8px;padding:4px 9px;font-size:11px;font-weight:700;cursor:pointer}
+.verify:hover{border-color:var(--cyan);color:var(--cyan)}
+.empty{padding:38px 20px;text-align:center;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;color:var(--muted);font-size:12px;flex-wrap:wrap;border-top:1px solid var(--line)}
+/* drawer */
+.drawer{position:fixed;inset:0;background:#000a;backdrop-filter:blur(3px);display:none;z-index:50}
+.drawer.on{display:block}
+.dbox{position:absolute;right:0;top:0;bottom:0;width:min(430px,94vw);background:linear-gradient(170deg,#131c27,#0b1219);border-left:1px solid var(--line2);padding:20px;overflow:auto}
+.dhead{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.dava{width:74px;height:74px;border-radius:20px;object-fit:cover;background:linear-gradient(135deg,#312e81,#7c3aed);display:grid;place-items:center;font-size:24px;font-weight:800}
+.dname{font-size:19px;font-weight:800;line-height:1.2}
+.did{font-size:12px;color:var(--muted)}
+.dstats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}
+.dstat{background:#0f1822;border:1px solid var(--line);border-radius:11px;padding:9px 11px}
+.dstat .k{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.dstat .v{font-size:18px;font-weight:800}
+.dlist{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.ditem{display:flex;justify-content:space-between;gap:10px;background:#0f1822;border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:12.5px}
+.ditem small{color:var(--muted)}
+.close{position:absolute;right:14px;top:12px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer}
+/* modal */
+.modal{position:fixed;inset:0;background:#000b;display:none;z-index:60;align-items:center;justify-content:center;padding:18px}
+.modal.on{display:flex}
+.mbox{background:linear-gradient(160deg,#141e2a,#0b1219);border:1px solid var(--line2);border-radius:16px;max-width:620px;width:100%;max-height:88vh;overflow:auto;padding:20px}
+.mbox h3{margin:0 0 4px;font-size:17px}
+.row{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed #1b2733;font-size:12.5px}
+.row .k{width:170px;color:var(--muted);flex:none}
+.row .v{word-break:break-all;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+.res{margin-top:14px;padding:11px 13px;border-radius:10px;font-weight:800;font-size:13px}
+.res.ok{background:#10281a;border:1px solid #1f6b3c;color:var(--green)}
+.res.bad{background:#2a1414;border:1px solid #7f2d2d;color:var(--red)}
+.res.warn{background:#241d0c;border:1px solid #7c5a1f;color:var(--gold)}
+.nb-tag{font-size:10px;color:var(--gold);border:1px solid #7c5a1f;background:#231a0c;border-radius:6px;padding:1px 6px;font-weight:800}
+@media(max-width:720px){.hide-sm{display:none}.wrap{padding:16px 12px 40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">🎁</div>
+      <div>
+        <h1>История розыгрышей</h1>
+        <div class="sub">канал <b id="chan">nasuvan_tv</b> · данные из облака бота</div>
+      </div>
+    </div>
+    <div class="status">
+      <span class="pill"><i class="dot" id="dot"></i><span id="upd">загрузка…</span></span>
+      <button class="btn ghost" id="refresh">Обновить</button>
+    </div>
+  </header>
+
+  <div class="cards">
+    <div class="card"><div class="k">Розыгрышей</div><div class="v" id="cTotal">—</div></div>
+    <div class="card"><div class="k">Побед / рероллов</div><div class="v" id="cWins">—</div></div>
+    <div class="card"><div class="k">Уникальных победителей</div><div class="v" id="cUniq">—</div></div>
+    <div class="card"><div class="k">Последний победитель</div><div class="v" id="cLast" style="font-size:16px">—</div></div>
+    <div class="card"><div class="k">Архив Nightbot</div><div class="v" id="cNb">—</div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="draws">Розыгрыши бота</button>
+    <button class="tab" data-tab="nightbot">Архив Nightbot</button>
+  </div>
+
+  <div class="panel" id="panelDraws">
+    <div class="filters">
+      <input id="q" class="grow" placeholder="Поиск по нику, призу, сайту…">
+      <select id="fType"><option value="">Все типы</option><option value="w">Победы</option><option value="r">Рероллы</option></select>
+      <select id="fSrc"><option value="">Все источники</option></select>
+      <input type="date" id="fFrom"><input type="date" id="fTo">
+      <button class="btn" id="reset">Сбросить</button>
+      <button class="btn primary" id="csv">CSV</button>
+    </div>
+    <div style="overflow:auto">
+      <table id="tbl">
+        <thead><tr>
+          <th data-sort="date">Дата</th>
+          <th data-sort="winner">Победитель</th>
+          <th class="hide-sm" data-sort="prize">Приз</th>
+          <th class="hide-sm" data-sort="payout">Вывод</th>
+          <th class="hide-sm" data-sort="site">Сайт</th>
+          <th data-sort="type">Тип</th>
+          <th class="hide-sm">Источник</th>
+          <th></th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="foot"><span id="cnt">—</span><span>Клик по нику — профиль · «Проверить» — пересчёт хешей</span></div>
+  </div>
+
+  <div class="panel" id="panelNb" style="display:none">
+    <div class="filters">
+      <input id="q2" class="grow" placeholder="Поиск по нику…">
+      <select id="fNb"><option value="">Все</option><option value="w">Победы</option><option value="r">Рероллы</option></select>
+      <button class="btn" id="reset2">Сбросить</button>
+    </div>
+    <div style="overflow:auto">
+      <table>
+        <thead><tr><th>Дата</th><th>Ник</th><th>Тип</th></tr></thead>
+        <tbody id="tbodyNb"></tbody>
+      </table>
+    </div>
+    <div class="foot"><span id="cntNb">—</span><span>архив старого бота (Nightbot), 2026</span></div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer"><div class="dbox">
+  <button class="close" id="dclose">✕</button>
+  <div class="dhead">
+    <img class="dava" id="dava" alt="">
+    <div><div class="dname" id="dname">—</div><div class="did" id="did"></div>
+      <div class="sub" style="margin-top:5px"><a id="dtwitch" target="_blank" rel="noopener">Twitch</a> · <a id="dshow" target="_blank" rel="noopener">ShowMaster</a></div>
+    </div>
+  </div>
+  <div class="dstats">
+    <div class="dstat"><div class="k">Побед</div><div class="v" id="dWins">0</div></div>
+    <div class="dstat"><div class="k">Рероллов</div><div class="v" id="dRerolls">0</div></div>
+    <div class="dstat"><div class="k">Nightbot: побед</div><div class="v" id="dNbWins">0</div></div>
+    <div class="dstat"><div class="k">Nightbot: рероллов</div><div class="v" id="dNbRer">0</div></div>
+  </div>
+  <div class="sub">История выпадений</div>
+  <div class="dlist" id="dlist"></div>
+</div></div>
+
+<div class="modal" id="modal"><div class="mbox">
+  <h3>Проверка розыгрыша</h3>
+  <div class="sub" id="mSub"></div>
+  <div id="mRows"></div>
+  <div class="res" id="mRes" style="display:none"></div>
+  <div style="display:flex;gap:9px;margin-top:14px;flex-wrap:wrap">
+    <button class="btn primary" id="recheck">Пересчитать</button>
+    <a class="btn" id="drandLink" target="_blank" rel="noopener">Открыть раунд drand</a>
+    <button class="btn" id="mclose">Закрыть</button>
+  </div>
+</div></div>
+
+<script>
+/* ================== НАСТРОЙКИ ================== */
+const GIST_OWNER = 'artes2233';
+const GIST_ID = '4ed64e61206c6ace4dbdfebff67a0ccc';
+const CHANNEL = 'nasuvan_tv';
+const SHOW_ID = true;      // показывать Twitch ID
+const SHOW_PAYOUT = true;  // показывать сумму вывода
+const RAW = (file) => `https://gist.githubusercontent.com/${GIST_OWNER}/${GIST_ID}/raw/${file}`;
+
+/* ================== СОСТОЯНИЕ ================== */
+let draws = [], nightbot = [];
+let sortKey = 'date', sortDir = -1;
+let currentNick = null;
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const low = (s) => String(s || '').toLowerCase();
+const fmtDate = (d) => { const [dt, tm] = String(d || '').split(' '); const p = (dt || '').split('-'); return p.length === 3 ? `${p[2]}.${p[1]}.${p[0]}` + (tm ? ' ' + tm.slice(0, 5) : '') : String(d || ''); };
+const num = (n) => Number(n || 0).toLocaleString('ru-RU');
+
+/* ================== ЗАГРУЗКА ================== */
+async function loadAll(manual) {
+  $('dot').className = 'dot warn';
+  try {
+    const [d1, d2] = await Promise.all([
+      fetch(RAW('giveaway-history.json') + '?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()),
+      fetch(RAW('nightbot-history.json') + '?t=' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).catch(() => ({ records: [] })),
+    ]);
+    draws = (d1.draws || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    nightbot = (d2.records || []).slice().sort((a, b) => String(b.d).localeCompare(String(a.d)));
+    localStorage.setItem('giv.cache', JSON.stringify({ draws, nightbot, at: Date.now() }));
+    renderAll();
+    $('dot').className = 'dot';
+    $('upd').textContent = 'обновлено ' + new Date().toLocaleTimeString('ru-RU');
+  } catch (e) {
+    const c = localStorage.getItem('giv.cache');
+    if (c) {
+      const j = JSON.parse(c);
+      draws = j.draws || []; nightbot = j.nightbot || [];
+      renderAll();
+      $('dot').className = 'dot warn';
+      $('upd').textContent = 'нет сети · кеш от ' + new Date(j.at).toLocaleTimeString('ru-RU');
+    } else {
+      $('upd').textContent = 'ошибка загрузки';
+      $('tbody').innerHTML = '<tr><td colspan="8" class="empty">Не удалось загрузить данные</td></tr>';
+    }
+  }
+}
+
+/* ================== АВАТАРКИ (ivr.fi, CORS *) ================== */
+const avaCache = new Map();
+const avaStore = JSON.parse(localStorage.getItem('giv.ava') || '{}');
+function cachedAvatar(nick) {
+  const k = low(nick);
+  if (avaCache.has(k)) return avaCache.get(k);
+  const rec = avaStore[k];
+  if (rec && Date.now() - rec.at < 7 * 864e5) { avaCache.set(k, rec.url); return rec.url; }
+  return null;
+}
+function setAvatar(nick, url, login, id) {
+  const k = low(nick);
+  avaCache.set(k, url || '');
+  avaStore[k] = { url: url || '', at: Date.now() };
+  if (login) avaStore[k].login = login;
+  if (id) avaStore[k].id = id;
+  try { localStorage.setItem('giv.ava', JSON.stringify(avaStore)); } catch (e) {}
+}
+async function fetchAvatar(nick) {
+  const k = low(nick);
+  const hit = cachedAvatar(k);
+  if (hit !== null) return hit;
+  try {
+    const r = await fetch('https://api.ivr.fi/v2/twitch/user?login=' + encodeURIComponent(k), { signal: AbortSignal.timeout(8000) });
+    const j = await r.json();
+    const u = Array.isArray(j) ? j[0] : null;
+    const url = (u && u.logo) || '';
+    setAvatar(k, url, u && u.login, u && u.id);
+    return url;
+  } catch (e) { setAvatar(k, ''); return ''; }
+}
+function initials(n) { return String(n || '?').slice(0, 2).toUpperCase(); }
+function avatarImg(nick, cls) {
+  const url = cachedAvatar(nick);
+  if (url) return `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy">`;
+  return `<div class="${cls}" data-nick="${esc(nick)}" data-ava="1">${initials(nick)}</div>`;
+}
+const avaObserver = new IntersectionObserver((entries) => {
+  for (const en of entries) {
+    if (!en.isIntersecting) continue;
+    const el = en.target;
+    avaObserver.unobserve(el);
+    const nick = el.dataset.nick;
+    fetchAvatar(nick).then((url) => {
+      if (!url || !el.parentNode) return;
+      const img = document.createElement('img');
+      img.className = el.className;
+      img.src = url;
+      img.alt = '';
+      el.replaceWith(img);
+    });
+  }
+}, { rootMargin: '150px' });
+
+/* ================== РЕНДЕР ================== */
+function typeOf(d) { return Number(d.is_reroll) === 1 ? 'r' : 'w'; }
+function filtered() {
+  const q = low($('q').value.trim());
+  const t = $('fType').value, src = $('fSrc').value;
+  const from = $('fFrom').value, to = $('fTo').value;
+  return draws.filter((d) => {
+    if (q && !(low(d.winner).includes(q) || low(d.prize).includes(q) || low(d.site).includes(q))) return false;
+    if (t && typeOf(d) !== t) return false;
+    if (src && String(d.random_source || '') !== src) return false;
+    const day = String(d.date || '').slice(0, 10);
+    if (from && day < from) return false;
+    if (to && day > to) return false;
+    return true;
+  });
+}
+function renderStats() {
+  const w = draws.filter((d) => typeOf(d) === 'w').length;
+  const r = draws.length - w;
+  const uniq = new Set(draws.map((d) => low(d.winner))).size;
+  const last = draws[0];
+  $('cTotal').textContent = num(draws.length);
+  $('cWins').innerHTML = `${num(w)} <small>/ ${num(r)}</small>`;
+  $('cUniq').textContent = num(uniq);
+  $('cLast').innerHTML = last ? `${esc(last.winner)} <small>${fmtDate(last.date)}</small>` : '—';
+  $('cNb').textContent = num(nightbot.length);
+  const srcs = [...new Set(draws.map((d) => d.random_source).filter(Boolean))];
+  const sel = $('fSrc');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">Все источники</option>' + srcs.map((s) => `<option value="${esc(s)}">${esc(s)}</option>`).join('');
+  sel.value = cur;
+}
+function srcLabel(s) {
+  const map = { drand: 'drand', 'random.org': 'random.org', qrng: 'QRNG', mix: 'Mix', race: 'Castle', local: 'локальный' };
+  return map[s] || s || '—';
+}
+function renderTable() {
+  const rows = filtered().sort((a, b) => {
+    const A = a[sortKey], B = b[sortKey];
+    return String(A == null ? '' : A).localeCompare(String(B == null ? '' : B)) * (sortDir > 0 ? 1 : -1);
+  });
+  $('cnt').textContent = 'Показано ' + num(rows.length) + ' из ' + num(draws.length);
+  if (!rows.length) { $('tbody').innerHTML = '<tr><td colspan="8" class="empty">Ничего не найдено</td></tr>'; return; }
+  $('tbody').innerHTML = rows.map((d, i) => {
+    const t = typeOf(d);
+    const src = String(d.random_source || '');
+    return `<tr>
+      <td>${fmtDate(d.date)}</td>
+      <td><div class="who" data-nick="${esc(d.winner)}" data-uid="${esc(d.user_id || '')}">
+        ${avatarImg(d.winner, 'ava')}
+        <div><div class="nm">${esc(d.winner)}</div>${SHOW_ID && d.user_id ? `<div class="id">ID ${esc(d.user_id)}</div>` : ''}</div>
+      </div></td>
+      <td class="hide-sm">${esc(d.prize || '')}</td>
+      <td class="hide-sm">${SHOW_PAYOUT ? num(d.payout) : '—'}</td>
+      <td class="hide-sm">${esc(d.site || '')}</td>
+      <td><span class="tag ${t}">${t === 'w' ? 'победа' : 'реролл'}</span></td>
+      <td class="hide-sm"><span class="src ${src === 'race' ? 'race' : src === 'local' ? 'local' : ''}">${esc(srcLabel(src))}</span></td>
+      <td><button class="verify" data-i="${draws.indexOf(d)}">Проверить</button></td>
+    </tr>`;
+  }).join('');
+  observeAvatars();
+}
+function renderNightbot() {
+  const q = low($('q2').value.trim());
+  const f = $('fNb').value;
+  const rows = nightbot.filter((r) => (!q || low(r.w).includes(q)) && (!f || r.s === f));
+  $('cntNb').textContent = 'Показано ' + num(rows.length) + ' из ' + num(nightbot.length);
+  $('tbodyNb').innerHTML = rows.length
+    ? rows.slice(0, 4000).map((r) => `<tr>
+        <td>${esc(fmtDate(r.d))}</td>
+        <td><div class="who" data-nick="${esc(r.w)}">${avatarImg(r.w, 'ava')}<div class="nm">${esc(r.w)}</div></div></td>
+        <td><span class="tag ${r.s === 'w' ? 'w' : 'r'}">${r.s === 'w' ? 'победа' : 'реролл'}</span></td>
+      </tr>`).join('')
+    : '<tr><td colspan="3" class="empty">Ничего не найдено</td></tr>';
+  observeAvatars();
+}
+function observeAvatars() {
+  document.querySelectorAll('[data-ava="1"]').forEach((el) => {
+    if (el.dataset.obs) return;
+    el.dataset.obs = '1';
+    avaObserver.observe(el);
+  });
+}
+function renderAll() { renderStats(); renderTable(); renderNightbot(); }
+
+/* ================== ПРОФИЛЬ ================== */
+async function openProfile(nick) {
+  currentNick = low(nick);
+  const mine = draws.filter((d) => low(d.winner) === currentNick);
+  const nb = nightbot.filter((r) => low(r.w) === currentNick);
+  const wins = mine.filter((d) => typeOf(d) === 'w').length;
+  const rer = mine.length - wins;
+  const nbW = nb.filter((r) => r.s === 'w').length;
+  const nbR = nb.length - nbW;
+  const uid = (mine.find((d) => d.user_id) || {}).user_id || (avaStore[currentNick] || {}).id || '';
+  $('dname').textContent = nick;
+  $('did').textContent = SHOW_ID && uid ? 'Twitch ID ' + uid : '';
+  $('dtwitch').href = 'https://www.twitch.tv/' + encodeURIComponent(currentNick);
+  $('dshow').href = 'https://followage.showmasterokda.com/?q=' + encodeURIComponent(currentNick);
+  $('dWins').textContent = wins;
+  $('dRerolls').textContent = rer;
+  $('dNbWins').textContent = nbW;
+  $('dNbRer').textContent = nbR;
+  const av = $('dava');
+  const url = cachedAvatar(currentNick);
+  av.src = url || '';
+  if (!url) { const u = await fetchAvatar(currentNick); if (u) av.src = u; else av.style.visibility = 'hidden'; }
+  const items = [
+    ...mine.map((d) => ({ t: d.date, kind: typeOf(d), txt: (d.prize || '') + (SHOW_PAYOUT && Number(d.payout) ? ' · вывод ' + num(d.payout) : ''), src: 'бот' })),
+    ...nb.map((r) => ({ t: r.d, kind: r.s, txt: 'Nightbot', src: 'архив' })),
+  ].sort((a, b) => String(b.t).localeCompare(String(a.t)));
+  $('dlist').innerHTML = items.length
+    ? items.map((x) => `<div class="ditem"><span>${esc(fmtDate(x.t))} ${x.src === 'архив' ? '<span class="nb-tag">NB</span>' : ''}</span><span class="tag ${x.kind === 'w' ? 'w' : 'r'}">${x.kind === 'w' ? 'победа' : 'реролл'}</span></div>`).join('')
+    : '<div class="sub">Нет записей</div>';
+  $('drawer').classList.add('on');
+}
+
+/* ================== ПРОВЕРКА ХЕШЕЙ ================== */
+async function sha256hex(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+function entropyOf(d) {
+  const parts = [];
+  if (d.drand_randomness) parts.push('drand:' + d.drand_randomness);
+  if (d.randomorg_value != null && d.randomorg_value !== '') parts.push('rotg:' + d.randomorg_value);
+  if (d.qrng_value != null && d.qrng_value !== '') parts.push('qrng:' + d.qrng_value);
+  if (!parts.length) return null;
+  return parts.join('|');
+}
+async function openVerify(idx) {
+  const d = draws[idx];
+  const rows = [];
+  const add = (k, v) => rows.push(`<div class="row"><div class="k">${k}</div><div class="v">${v == null || v === '' ? '—' : esc(v)}</div></div>`);
+  add('Дата', fmtDate(d.date));
+  add('Победитель', d.winner);
+  add('Тип', typeOf(d) === 'w' ? 'победа' : 'реролл');
+  add('Источник', srcLabel(d.random_source));
+  add('Раунд drand', d.drand_round);
+  add('randomness', d.drand_randomness);
+  add('salt', d.drand_salt);
+  add('candidates_hash', d.candidates_hash);
+  add('shortlist_hash', d.shortlist_hash);
+  add('final_index / K', (d.final_index ?? '—') + ' / ' + (d.finalists_k ?? (Array.isArray(d.shortlist) ? d.shortlist.length : '—')));
+  add('shortlist', Array.isArray(d.shortlist) && d.shortlist.length ? d.shortlist.join(', ') : (d.shortlist || '—'));
+  $('mRows').innerHTML = rows.join('');
+  $('mSub').textContent = 'Сверка пересчётом SHA-256 в браузере';
+  $('drandLink').href = d.drand_round ? 'https://api.drand.sh/public/' + d.drand_round : 'https://api.drand.sh/';
+  $('drandLink').style.display = d.drand_round ? '' : 'none';
+  const btn = $('recheck');
+  btn.onclick = () => verify(d);
+  $('mRes').style.display = 'none';
+  $('modal').classList.add('on');
+  verify(d);
+}
+async function verify(d) {
+  const box = $('mRes');
+  box.style.display = 'block';
+  const entropy = entropyOf(d);
+  const salt = d.drand_salt;
+  const listHash = d.candidates_hash;
+  const slHash = d.shortlist_hash;
+  const K = Number(d.finalists_k || (Array.isArray(d.shortlist) ? d.shortlist.length : 0));
+  if (d.random_source === 'race') { box.className = 'res warn'; box.textContent = 'Castle: победитель определяется гонкой, хеш не применялся'; return; }
+  if (!entropy) { box.className = 'res warn'; box.textContent = 'Нет сохранённой случайности — проверить нельзя'; return; }
+  if (!salt || !listHash) { box.className = 'res warn'; box.textContent = 'Нет salt или candidates_hash (старая запись) — проверить нельзя'; return; }
+  if (!slHash || !K) {
+    box.className = 'res warn';
+    box.textContent = 'Одноступенчатый розыгрыш: нужен список участников, чтобы пересчитать победителя';
+    return;
+  }
+  const H2 = await sha256hex(entropy + '|' + salt + '|' + listHash + '|final|' + slHash);
+  const idx = Number(BigInt('0x' + H2) % BigInt(K));
+  const okIdx = idx === Number(d.final_index);
+  let okWinner = null;
+  if (Array.isArray(d.shortlist) && d.shortlist.length) {
+    okWinner = low(d.shortlist[idx]) === low(d.winner);
+  }
+  if (okIdx && okWinner !== false) {
+    box.className = 'res ok';
+    box.textContent = `✅ Совпало: H2 mod ${K} = ${idx} — как записано в базе` + (okWinner ? ', победитель есть в шорт-листе' : '');
+  } else {
+    box.className = 'res bad';
+    box.textContent = `❌ Не совпало: пересчёт даёт ${idx}, в базе ${d.final_index}` + (okWinner === false ? ' (и ник не совпал с шорт-листом)' : '');
+  }
+}
+
+/* ================== CSV ================== */
+function exportCsv() {
+  const rows = filtered();
+  const head = ['date', 'winner', 'user_id', 'prize', 'payout', 'site', 'is_reroll', 'random_source', 'drand_round', 'drand_randomness', 'drand_salt', 'candidates_hash', 'shortlist_hash', 'final_index', 'finalists_k'];
+  const csv = [head.join(';')].concat(rows.map((d) => head.map((k) => JSON.stringify(d[k] == null ? '' : d[k])).join(';'))).join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'giveaway-history.csv';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+}
+
+/* ================== СОБЫТИЯ ================== */
+$('refresh').onclick = () => loadAll(true);
+$('q').oninput = renderTable;
+$('fType').onchange = renderTable;
+$('fSrc').onchange = renderTable;
+$('fFrom').onchange = renderTable;
+$('fTo').onchange = renderTable;
+$('reset').onclick = () => { $('q').value = ''; $('fType').value = ''; $('fSrc').value = ''; $('fFrom').value = ''; $('fTo').value = ''; renderTable(); };
+$('csv').onclick = exportCsv;
+$('q2').oninput = renderNightbot;
+$('fNb').onchange = renderNightbot;
+$('reset2').onclick = () => { $('q2').value = ''; $('fNb').value = ''; renderNightbot(); };
+document.querySelectorAll('.tab').forEach((t) => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x === t));
+  const isDraws = t.dataset.tab === 'draws';
+  $('panelDraws').style.display = isDraws ? '' : 'none';
+  $('panelNb').style.display = isDraws ? 'none' : '';
+  if (!isDraws) renderNightbot();
+});
+document.querySelectorAll('th[data-sort]').forEach((th) => th.onclick = () => {
+  const k = th.dataset.sort;
+  if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = 1; }
+  renderTable();
+});
+document.addEventListener('click', (e) => {
+  const who = e.target.closest('.who');
+  if (who) { openProfile(who.dataset.nick); return; }
+  const v = e.target.closest('.verify');
+  if (v) { openVerify(Number(v.dataset.i)); return; }
+});
+$('dclose').onclick = () => $('drawer').classList.remove('on');
+$('drawer').onclick = (e) => { if (e.target === $('drawer')) $('drawer').classList.remove('on'); };
+$('mclose').onclick = () => $('modal').classList.remove('on');
+$('modal').onclick = (e) => { if (e.target === $('modal')) $('modal').classList.remove('on'); };
+
+loadAll();
+setInterval(() => loadAll(), 60000);
+</script>
+</body>
+</html>
